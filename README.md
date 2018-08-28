@@ -6,6 +6,18 @@
   	- Boost 1.5.0 or later
 	- GCC 4.9.1 / MSVC 2013 or later; 
 
+### Building
+
+The basic steps for configuring and building the library look like this:
+
+```bash
+$ git clone https://github.com/google/testeSCIM.git
+$ mkdir build && cd build
+$ cmake -G <generator> [options] ../benchmark
+# Assuming a makefile generator was used
+$ make
+```
+
 ### USAGE: 
 	SCIM.exe [INPUT_PATH] [DR] [OUTPUT_PATH]
 
