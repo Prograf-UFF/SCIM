@@ -7,7 +7,7 @@
 	- GCC 4.9.1 / MSVC 2013 or later; 
 
 ### USAGE: 
-	- The proper parameters must be set in settings.h header file.
+	SCIM.exe [INPUT_PATH] [DR] [OUTPUT_PATH]
 
 In case of doubts about the code, send it to amantuan@id.uff.br / altobelli.bm@gmail.com
 
