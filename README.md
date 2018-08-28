@@ -3,7 +3,7 @@
 
 ### REQUIREMENTS
 	- Eigen 3.2.0 or later;
-  - Boost 1.5.0 or later
+  	- Boost 1.5.0 or later
 	- GCC 4.9.1 / MSVC 2013 or later; 
 
 ### USAGE: 
