@@ -67,5 +67,7 @@ $ make
 
 To run the sample application, just call:
 ```bash
-$ SCIM <database-file> <dr-threshold-value> <output-path>
+$ SCIM <database-file-path> <dr-threshold-value> <output-folder-path>
 ```
+
+The database file must follow the ``.num`` format used by [The LUCS-KDD Discretised/normalised ARM and CARM Data Library](http://www.csc.liv.ac.uk/~frans/KDD/Software/LUCS_KDD_DN).
