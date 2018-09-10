@@ -1,5 +1,5 @@
 # Spatial Contextualization for Closed Itemset Mining
-The Spatial Contextualization for Closed Itemset Mining (SCIM) algorithm is a mining procedure that builds a metric space for the target database in such a way that relevant closed itemsets can be retrieved regarding the relative spatial location of their items.
+The Spatial Contextualization for Closed Itemset Mining (SCIM) algorithm is a mining procedure that builds a space for the target database in such a way that relevant closed itemsets can be retrieved regarding the relative spatial location of their items.
 
 The SCIM algorithm uses [Dual Scaling](https://www.taylorfrancis.com/books/9781317781943) to map the items of the database to a multidimensional metric space called Solution Space. The representation of the database in the Solution Space assists in the interpretation and definition of overlapping clusters of related items. The distances of the items to the centers of the clusters are used as criteria for generating itemsets. Therefore, instead of using the minimum support threshold, a distance threshold is defined concerning the reference and the maximum distances computed per cluster during the mapping procedure.
 
