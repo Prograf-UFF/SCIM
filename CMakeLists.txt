@@ -68,6 +68,8 @@ endif ()
 
 include_directories (include)
 
+ADD_DEFINITIONS(-D_USE_MATH_DEFINES)
+
 #However, the file(GLOB...) allows for wildcard additions:
 #file(GLOB SOURCES "src/*.cpp")
 
