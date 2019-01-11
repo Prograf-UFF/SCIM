@@ -14,7 +14,8 @@ Please cite our IEEE ICDM 2018 paper if you use this code in your research:
   title     = {Spatial contextualization for closed itemset mining},
   booktitle = {Proceedings of the 2018 IEEE International Conference on Data Mining (ICDM)},
   year      = {2018},
-  pages     = {to appear},
+  pages     = {1176--1181},
+  doi       = {https://doi.org/10.1109/ICDM.2018.00155},
   url       = {http://www.ic.uff.br/~laffernandes/projects/sodm},
 }
 ```
