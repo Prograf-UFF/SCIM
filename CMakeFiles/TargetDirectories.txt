@@ -1,3 +1,0 @@
-/home/alto/SCIM/CMakeFiles/rebuild_cache.dir
-/home/alto/SCIM/CMakeFiles/SCIM.dir
-/home/alto/SCIM/CMakeFiles/edit_cache.dir
