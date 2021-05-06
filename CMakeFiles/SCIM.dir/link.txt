@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11  -rdynamic CMakeFiles/SCIM.dir/src/CFITree.cpp.o CMakeFiles/SCIM.dir/src/Cluster.cpp.o CMakeFiles/SCIM.dir/src/ECMI.cpp.o CMakeFiles/SCIM.dir/src/FpTree.cpp.o CMakeFiles/SCIM.dir/src/main.cpp.o  -o bin/SCIM 

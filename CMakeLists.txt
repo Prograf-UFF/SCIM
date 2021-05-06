@@ -26,14 +26,19 @@ else()
 endif()
 
 
-execute_process(
-    COMMAND ${CMAKE_COMMAND} -E environment
-)
+#execute_process(
+#    COMMAND ${CMAKE_COMMAND} -E environment
+#)
 
-SET( EIGEN3_INCLUDE_DIR "ENV{EIGEN3_INCLUDE_DIR}" )
+SET( EIGEN3_INCLUDE_DIR "$ENV{EIGEN3_INCLUDE_DIR}" )
 
 IF( NOT EIGEN3_INCLUDE_DIR )
-    MESSAGE( FATAL_ERROR "Please point the environment variable EIGEN3_INCLUDE_DIR to the include directory of your Eigen3 installation.")
+
+	SET( EIGEN3_INCLUDE_DIR "ENV{EIGEN3_INCLUDE_DIR}" )
+
+	IF( NOT EIGEN3_INCLUDE_DIR )
+		MESSAGE( FATAL_ERROR "Please point the environment variable EIGEN3_INCLUDE_DIR to the include directory of your Eigen3 installation.")
+	ENDIF()
 ENDIF()
 INCLUDE_DIRECTORIES ( "${EIGEN3_INCLUDE_DIR}" )
 
@@ -43,25 +48,27 @@ INCLUDE_DIRECTORIES ( "${EIGEN3_INCLUDE_DIR}" )
 # Either specify BOOST_ROOT or BOOST_INCLUDEDIR and BOOST_LIBRARYDIR.
 # I am using "MinGW Distro" in this example, but also a relative path, e. g.
 # "vendor/boost" can be specified.
-set (BOOST_ROOT ON)
-set (Boost_NO_SYSTEM_PATHS ON)
-set (Boost_USE_MULTITHREADED ON)
-set (Boost_USE_STATIC_LIBS ON)
-set (Boost_USE_STATIC_RUNTIME OFF)
-set (BOOST_ALL_DYN_LINK OFF)
+
+set (BOOST_ROOT "$ENV{BOOST_ROOT}")
+#set (Boost_NO_SYSTEM_PATHS ON)
+#set (Boost_USE_MULTITHREADED ON)
+#set (Boost_USE_STATIC_LIBS ON)
+#set (Boost_USE_STATIC_RUNTIME OFF)
+#set (BOOST_ALL_DYN_LINK OFF)
 
 # Load settings for the external project "Boost".
 # The components "system" and "filesystem" from "Boost" version 1.55.0 or
 # greater are required.
-find_package (Boost 1.62.0)
-if (Boost_FOUND)
+if (NOT BOOST_ROOT)
   # From the offical documentation:
   # Add include directories to the build. [...] If the SYSTEM option is given,
   # the compiler will be told the directories are meant as system include
   # directories on some platforms (signalling this setting might achieve effects
   # such as the compiler skipping warnings [...])."
-  include_directories (SYSTEM ${Boost_INCLUDE_DIR})
-
+  set (BOOST_ROOT "ENV{BOOST_ROOT}")
+  if (NOT BOOST_ROOT)
+	  MESSAGE( FATAL_ERROR "Please point the environment variable BOOST_ROOT to the include directory of your Boost installation.")
+  endif()
   # From the offical documentation:
   # "Specify directories in which the linker will look for libraries. [...] Note
   # that this command is rarely necessary. Library locations returned by
@@ -70,9 +77,9 @@ if (Boost_FOUND)
   # will ensure the linker finds them."
   #link_directories (${Boost_LIBRARY_DIRS})
 endif ()
+include_directories ("${BOOST_ROOT}")
 
 include_directories (include)
-
 ADD_DEFINITIONS(-D_USE_MATH_DEFINES)
 
 #However, the file(GLOB...) allows for wildcard additions:
