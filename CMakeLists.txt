@@ -1,6 +1,7 @@
 
 cmake_minimum_required (VERSION 2.8.12.2 FATAL_ERROR)
 
+
 # Set options for this project.
 set (PROJECT_NAME "SCIM" CXX)
 project (${PROJECT_NAME})
@@ -25,8 +26,12 @@ else()
 endif()
 
 
+execute_process(
+    COMMAND ${CMAKE_COMMAND} -E environment
+)
 
-SET( EIGEN3_INCLUDE_DIR "$ENV{EIGEN3_INCLUDE_DIR}" )
+SET( EIGEN3_INCLUDE_DIR "ENV{EIGEN3_INCLUDE_DIR}" )
+
 IF( NOT EIGEN3_INCLUDE_DIR )
     MESSAGE( FATAL_ERROR "Please point the environment variable EIGEN3_INCLUDE_DIR to the include directory of your Eigen3 installation.")
 ENDIF()
@@ -38,7 +43,7 @@ INCLUDE_DIRECTORIES ( "${EIGEN3_INCLUDE_DIR}" )
 # Either specify BOOST_ROOT or BOOST_INCLUDEDIR and BOOST_LIBRARYDIR.
 # I am using "MinGW Distro" in this example, but also a relative path, e. g.
 # "vendor/boost" can be specified.
-set (BOOST_ROOT)
+set (BOOST_ROOT ON)
 set (Boost_NO_SYSTEM_PATHS ON)
 set (Boost_USE_MULTITHREADED ON)
 set (Boost_USE_STATIC_LIBS ON)

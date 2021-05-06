@@ -20,7 +20,7 @@
 const double LIMITE_INFERIOR_DELTA = 1e-8; // using for eliminate irrelevant dimension
 const double MAXIMUM_ANGLE_DEGREE = 90.0; // using to find worts formation of clusters give a item
 typedef double real_type;
-typedef double index;
+
 
 typedef Eigen::Matrix<real_type, Eigen::Dynamic, Eigen::Dynamic>	dynamic_size_matrix;
 typedef Eigen::Matrix<real_type, Eigen::Dynamic, 1>					column_vector_type;
